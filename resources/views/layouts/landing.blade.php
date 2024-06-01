@@ -20,7 +20,7 @@
     <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Anaisme - Monitoring Lingkuangan Berbasis IoT</title>
+    <title>Anaisme - Monitoring Lingkungan Berbasis IoT</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext"
@@ -32,7 +32,7 @@
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="images/logo-A.png">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -54,7 +54,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo-a.svg" alt="alternative"></a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -73,15 +73,25 @@
                     <a class="nav-link page-scroll" href="https://github.com/Anamardi">Contact</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('register') }}">Register</a>
-                </li>
+                {{-- cek apakah sudah login --}}
+                @if (Auth::check())
+                    {{-- jika sudah tampilkan menu dashbord dan logout --}}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('dashboard') }}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('logout') }}">Logout</a>
+                    </li>
+                @else
+                    {{-- Jika belum tampilkan register dan login --}}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('register') }}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('login') }}">Login</a>
+                    </li>
+                @endif
 
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('login') }}">Login</a>
-                </li>
-
-                \
             </ul>
             <span class="nav-item social-icons">
                 <span class="fa-stack">
@@ -108,11 +118,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="text-container">
+                        <div class="text-container" style="margin-top: 20px;">
                             <h1><span class="turquoise">Monitoring</span> Lingkungan</h1>
                             <p class="p-large">Sistem Pemantauan Lingkungan Berbasis IoT dengan Notifikasi dan Kontrol
                                 Jarak Jauh</p>
-                            <a class="btn-solid-lg page-scroll" href="{{ route('login') }}">LOGIN</a>
+
+                            @if (Auth::check())
+                                <a class="btn-solid-lg page-scroll" href="{{ route('dashboard') }}">Dashboard</a>
+                            @else
+                                <a class="btn-solid-lg page-scroll" href="{{ route('login') }}">Login</a>
+                            @endif
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
