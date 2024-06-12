@@ -51,7 +51,7 @@
             <ul class="navbar-list">
                 <li>
                     <a href="#" class="search-toggle iq-waves-effect bg-primary text-white"><img
-                            src="images/user/1.jpg" class="img-fluid rounded" alt="user"></a>
+                            src="images/user/aa.png" class="img-fluid rounded" alt="user"></a>
                     <div class="iq-sub-dropdown iq-user-dropdown">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height shadow-none m-0">
                             <div class="iq-card-body p-0 ">

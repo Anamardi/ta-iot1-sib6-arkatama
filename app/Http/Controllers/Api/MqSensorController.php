@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Service\WhatsappNotificationService;
+use App\Models\MqSensor;
+use Illuminate\Http\Request;
+
+class MqSensorController extends Controller
+{
+    function index()
+    {
+        $sensorsData = MqSensor::orderBy('created_at', 'desc')
+            ->limit(20)
+            ->get();
+
+        return response()
+        ->json([
+            'data' => $sensorsData,
+            'message' => 'Success'
+        ], 200);
+    }
+
+    function show($id)
+    {
+        $sensorsData = MqSensor::find($id);
+
+        if ($sensorsData) {
+            return response()
+            ->json($sensorsData, 200);
+        } else {
+            return response()
+            ->json(['message' => 'Data not found'], 404);
+        }
+    }
+
+    function store(Request $request)
+    {
+        $request->validate([
+            'value' => [
+                'required',
+                'numeric'
+            ]
+        ]);
+
+        $sensorData = MqSensor::create($request->all());
+
+        //notifikasi massal
+        WhatsappNotificationService::notifikasiKebocoranGasMassal
+        ($request->value);
+
+        return response()
+            ->json($sensorData, 201);
+
+    }
+}

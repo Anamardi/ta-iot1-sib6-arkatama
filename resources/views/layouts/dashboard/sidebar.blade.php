@@ -16,40 +16,34 @@
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="iq-menu">
                 <li class="
-                @if (request()->url() == route('dashboard'))
-                    active
-                @endif
+                @if (request()->url() == route('dashboard')) active @endif
                 ">
                     <a href="{{ route('dashboard') }}" class="iq-waves-effect"><i
                             class="ri-home-4-line"></i><span>Dashboard</span></a>
                 </li>
 
                 <li class="
-                @if (request()->url() == '#')
-                    active
-                @endif
+                @if (request()->url() == route('sensor')) active @endif
                 ">
-                    <a href="chat.html" class="iq-waves-effect"><i class="ri-temp-cold-line"></i><span>Sensor</span></a>
+                    <a href="{{ route('sensor') }}" class="iq-waves-effect"><i
+                            class="ri-temp-cold-line"></i><span>Sensor</span></a>
                 </li>
 
                 <li class="
-                @if (request()->url() == '#')
-                    active
-                @endif
+                @if (request()->url() == route('leds.index')) active @endif
                 ">
-                    <a href="chat.html" class="iq-waves-effect"><i class="ri-lightbulb-line"></i><span>LED
-                            Control</span></a>
+                    <a href="{{ route('leds.index') }}" class="iq-waves-effect"><i
+                            class="ri-lightbulb-line"></i><span>LED Control</span></a>
                 </li>
 
-                <li class="
-                @if (request()->url() == route('users.index'))
-                    active
-                @endif
+                @if (auth()->user()->role == 'admin')
+                    <li class="
+                @if (request()->url() == route('users.index')) active @endif
                 ">
-                    <a href="{{ route('users.index') }}" class="iq-waves-effect"><i
-                            class="ri-user-2-line"></i><span>Pengguna</span></a>
-                </li>
-
+                        <a href="{{ route('users.index') }}" class="iq-waves-effect"><i
+                                class="ri-user-2-line"></i><span>Pengguna</span></a>
+                    </li>
+                @endif
             </ul>
         </nav>
         <div class="p-3"></div>
