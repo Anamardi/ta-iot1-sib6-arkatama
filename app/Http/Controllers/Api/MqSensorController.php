@@ -16,10 +16,10 @@ class MqSensorController extends Controller
             ->get();
 
         return response()
-        ->json([
-            'data' => $sensorsData,
-            'message' => 'Success'
-        ], 200);
+            ->json([
+                'data' => $sensorsData,
+                'message' => 'Success'
+            ], 200);
     }
 
     function show($id)
@@ -28,10 +28,10 @@ class MqSensorController extends Controller
 
         if ($sensorsData) {
             return response()
-            ->json($sensorsData, 200);
+                ->json($sensorsData, 200);
         } else {
             return response()
-            ->json(['message' => 'Data not found'], 404);
+                ->json(['message' => 'Data not found'], 404);
         }
     }
 
@@ -47,11 +47,9 @@ class MqSensorController extends Controller
         $sensorData = MqSensor::create($request->all());
 
         //notifikasi massal
-        WhatsappNotificationService::notifikasiKebocoranGasMassal
-        ($request->value);
+        WhatsappNotificationService::notifikasiKebocoranGasMassal($request->value);
 
         return response()
             ->json($sensorData, 201);
-
     }
 }
