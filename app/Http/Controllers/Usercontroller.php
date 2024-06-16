@@ -16,7 +16,7 @@ class Usercontroller extends Controller
         ];
         $data ['breadcrumbs'][]= [
             'title' => 'Pengguna',
-            'url' => 'users.index'
+            'url' => route('users.index')
         ];
 
         $users = User::orderBy('name') -> get();

@@ -21,7 +21,7 @@ class LedController extends Controller
         ];
         $data ['breadcrumbs'][]= [
             'title' => 'Led Control',
-            'url' => 'leds.index'
+            'url' => route('leds.index')
         ];
 
         return view('pages.led', $data);
