@@ -141,6 +141,86 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 
+ <!-- Services -->
+ <div id="services" class="cards-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Project Documentation</h2>
+                <p class="p-heading p-large">We serve small and medium sized companies in all tech related industries with high quality growth services which are presented below</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card -->
+                <div class="card">
+                    <img class="card-image" src="images/services-icon-1.svg" alt="alternative">
+                    <div class="card-body">
+                        <h4 class="card-title">Market Analysis</h4>
+                        <p>Our team of enthusiastic marketers will analyse and evaluate how your company stacks against the closest competitors</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <img class="card-image" src="images/services-icon-2.svg" alt="alternative">
+                    <div class="card-body">
+                        <h4 class="card-title">Opportunity Scan</h4>
+                        <p>Once the market analysis process is completed our staff will search for opportunities that are in reach</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <img class="card-image" src="images/services-icon-3.svg" alt="alternative">
+                    <div class="card-body">
+                        <h4 class="card-title">Action Plan</h4>
+                        <p>With all the information in place you will be presented with an action plan that your company needs to follow</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-1 -->
+<!-- end of services -->
+
+
+
+       <!-- About -->
+       <div id="about" class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>About Me</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+
+                    <!-- Team Member -->
+                    <div class="team-member">
+                        <div class="image-wrapper">
+                            <img class="img-fluid" src="images/foto-ana.jpg" alt="alternative">
+                        </div> <!-- end of image wrapper -->
+                        <p class="p-large"><strong>Ana Mardiana</strong></p>
+                        <p class="job-title">S1 Physics</p>
+                        <!-- end of social-icons -->
+                    </div> <!-- end of team-member -->
+                    <!-- end of team member -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of about -->
+
+
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
